@@ -1,0 +1,43 @@
+{
+  "name": "job-listings",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This is a solution to the Job listings with filtering challenge on Frontend Mentor.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardcyrus/fm-job-listings-with-filtering.git"
+  },
+  "keywords": [],
+  "author": "Richard Cyrus <richard.cyrus@rcyrus.com> (https://www.richardcyrus.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richardcyrus/fm-job-listings-with-filtering/issues"
+  },
+  "homepage": "https://github.com/richardcyrus/fm-job-listings-with-filtering#readme",
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@styled-jsx/plugin-sass": "3.0.0",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard": "16.0.3",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-promise": "5.1.0",
+    "eslint-plugin-react": "7.24.0",
+    "prettier": "2.3.2",
+    "sass": "1.35.1",
+    "standard": "16.0.3"
+  }
+}

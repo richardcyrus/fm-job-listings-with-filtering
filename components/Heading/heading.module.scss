@@ -1,0 +1,18 @@
+$color-primary-dark-cyan: #5ca5a5;
+
+.siteHeader {
+  background: {
+    image: url(/images/bg-header-mobile.svg);
+    repeat: no-repeat;
+    position: center;
+    color: $color-primary-dark-cyan;
+  }
+
+  @media screen and (min-width: 48em) {
+    background-image: url(/images/bg-header-desktop.svg);
+    margin: 0 auto;
+  }
+
+  display: block;
+  height: 9.75rem;
+}
