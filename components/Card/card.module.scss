@@ -1,0 +1,122 @@
+$color-neutral-dark-cyan: #7c8f8f;
+$color-neutral-very-dark-cyan: #2b3939;
+$color-primary-dark-cyan: #5ca5a5;
+
+.card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -5px rgba(13, 113, 130, 0.15);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  position: relative;
+
+  &:first-child {
+    margin-top: 3.5rem;
+  }
+
+  @media screen and (min-width: 75em) {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    padding: 2rem 2.5rem;
+    width: 1110px;
+
+    &:first-child {
+      margin-top: 4.75rem;
+    }
+  }
+}
+
+.cardHead {
+  padding-top: 0.9375rem;
+
+  @media screen and (min-width: 75em) {
+    margin-left: 1.5rem;
+    padding-top: 0;
+  }
+}
+
+.cardBody {
+  border-top: 1px solid #b7c4c4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  @media screen and (min-width: 75em) {
+    border: none;
+    margin-left: auto;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+.featured {
+  border-left: 5px solid $color-primary-dark-cyan;
+}
+
+.cardImage {
+  height: 48px;
+  left: 24px;
+  position: absolute;
+  top: -24px;
+  width: 48px;
+
+  @media screen and (min-width: 75em) {
+    height: 88px;
+    position: static;
+    width: 88px;
+  }
+}
+
+.company {
+  color: $color-primary-dark-cyan;
+  font-size: 0.8125rem;
+  font-weight: 700;
+
+  @media screen and (min-width: 75em) {
+    font-size: 0.875rem;
+  }
+}
+
+.position {
+  color: $color-neutral-very-dark-cyan;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding-top: 0.63rem;
+
+  @media screen and (min-width: 75em) {
+    font-size: 1.125rem;
+  }
+}
+
+.postedAt,
+.contract,
+.location {
+  color: $color-neutral-dark-cyan;
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: -0.00625rem;
+  line-height: 1.5rem;
+  padding-top: 0.5rem;
+
+  @media screen and (min-width: 75em) {
+    font-size: 0.9375rem;
+  }
+}
+
+.postedAt,
+.contract {
+  &::after {
+    color: #b7c4c4;
+    content: '\2022';
+    padding: 0 0.5rem;
+  }
+}
