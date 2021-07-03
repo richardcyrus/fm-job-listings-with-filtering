@@ -63,4 +63,4 @@ Users should be able to:
 ## Author
 
 - Website - [www.richardcyrus.com](https://www.richardcyrus.com)
-- Frontend Mentor - [@richarcyrus](https://www.frontendmentor.io/profile/richarcyrus)
+- Frontend Mentor - [@richardcyrus](https://www.frontendmentor.io/profile/richardcyrus)
