@@ -43,7 +43,8 @@ Users should be able to:
 
 ### Links
 
-- [Repository URL](https://github.com/richardcyrus/fm-job-listings-with-filtering)
+- [Repository](https://github.com/richardcyrus/fm-job-listings-with-filtering)
+- [Live Site](https://fm-job-listings-with-filtering.vercel.app/)
 
 ## My process
 
