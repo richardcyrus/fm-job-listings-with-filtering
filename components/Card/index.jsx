@@ -33,8 +33,8 @@ export default function Card(props) {
         </FilterTablet>
         {props.languages.map((language) => (
           <FilterTablet
-            key={language}
-            kind="language"
+            key={`${props.id}_${language}`}
+            kind="languages"
             handleClick={props.handleFilterTabletClick}
           >
             {language}
@@ -42,8 +42,8 @@ export default function Card(props) {
         ))}
         {props.tools.map((tool) => (
           <FilterTablet
-            key={tool}
-            kind="tool"
+            key={`${props.id}_${tool}`}
+            kind="tools"
             handleClick={props.handleFilterTabletClick}
           >
             {tool}

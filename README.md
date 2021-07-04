@@ -45,7 +45,6 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
@@ -59,6 +58,10 @@ Users should be able to:
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [CSS Button Styling Guide](https://moderncss.dev/css-button-styling-guide/)
 - [Next.js (useStaticProps, useStaticPaths) + Static JSON Data](https://medium.com/swlh/next-js-usestaticprops-usestaticpaths-static-json-data-9f7903b8a5aa)
+- [Javascript: Filter list of objects by a list of filter objects](https://stackoverflow.com/questions/49688946/javascript-filter-list-of-objects-by-a-list-of-filter-objects)
+- [React Filter: Filtering Arrays in React (With Examples)](https://upmostly.com/tutorials/react-filter-filtering-arrays-in-react-with-examples)
+- [The ultimate guide to the React useReducer Hook](https://blog.logrocket.com/guide-to-react-usereducer-hook/)
+- [React Express: useReducer](https://www.react.express/hooks/usereducer)
 
 ## Author
 

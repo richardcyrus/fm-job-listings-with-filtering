@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 
 import Layout from '../components/Layout'
 import Card from '../components/Card'
-// import ClearButton from '../components/Buttons/ClearButton'
 import FilterButton from '../components/Buttons/FilterButton'
 import FilterBar from '../components/FilterBar'
 
@@ -16,45 +15,82 @@ export const getStaticProps = async () => {
   }
 }
 
+function jobsFilterReducer(state, action) {
+  switch (action.type) {
+    case 'add_filter_item': {
+      const { jobs, filters } = state
+
+      if (!filters.some((item) => item.label === action.label)) {
+        filters.push({ label: action.label, kind: action.kind })
+      }
+
+      const newJobs = jobs.filter((job) =>
+        // eslint-disable-next-line array-callback-return
+        filters.every((item) => {
+          if (item.kind === 'role' || item.kind === 'level') {
+            return job[item.kind] === item.label
+          } else if (item.kind === 'languages' || item.kind === 'tools') {
+            return job[item.kind].includes(item.label)
+          }
+        })
+      )
+
+      return { jobs: newJobs, filters: filters }
+    }
+    case 'remove_filter_item': {
+      const { filters } = state
+      const newFilter = filters.filter((item) => item.label !== action.label)
+
+      if (newFilter.length === 0) {
+        return { jobs: action.jobsList, filters: newFilter }
+      }
+
+      const newJobsList = action.jobsList.filter((job) =>
+        // eslint-disable-next-line array-callback-return
+        newFilter.every((item) => {
+          if (item.kind === 'role' || item.kind === 'level') {
+            return job[item.kind] === item.label
+          } else if (item.kind === 'languages' || item.kind === 'tools') {
+            return job[item.kind].includes(item.label)
+          }
+        })
+      )
+
+      return { jobs: newJobsList, filters: newFilter }
+    }
+    case 'clear_all_filters': {
+      return action.payload
+    }
+    default:
+      return state
+  }
+}
+
 export default function Home({ jobsList }) {
-  const [filters, setFilter] = useState([])
-  const [jobs, setJobsList] = useState(jobsList)
-  const [cleared, clearFilter] = useState()
+  const initialState = {
+    jobs: jobsList,
+    filters: [],
+  }
+
+  const [state, dispatch] = useReducer(jobsFilterReducer, initialState)
+  const { jobs, filters } = state
 
   /**
-   * Determine how to filter the job list based on the button that was clicked.
+   * Filter the job list based on the button that was clicked.
    *
    * @param {Object} evt The click event.
    */
-  const handleFilterTabletClick = (evt) => {
+  const onFilterTabletClick = (evt) => {
     const label = evt.target.textContent
     const kind = evt.target.dataset.kind
-
-    switch (kind) {
-      case 'role':
-        setJobsList(jobs.filter((job) => job.role === label))
-        break
-      case 'level':
-        setJobsList(jobs.filter((job) => job.level === label))
-        break
-      case 'language':
-        setJobsList(jobs.filter((job) => job.languages.includes(label)))
-        break
-      case 'tool':
-        setJobsList(jobs.filter((job) => job.tools.includes(label)))
-        break
-    }
-
-    // Update the list of filter criteria if the label is not already a part of the list.
-    !filters.includes(label) && setFilter([...filters, label])
+    dispatch({ type: 'add_filter_item', label, kind })
   }
 
   /**
-   * Populate the state variable with all jobs and clear the filter list.
+   * Populate state with all jobs and clear the filter list.
    */
-  const handleClear = () => {
-    setJobsList(jobsList)
-    setFilter([])
+  const onClear = () => {
+    dispatch({ type: 'clear_all_filters', payload: initialState })
   }
 
   /**
@@ -63,7 +99,7 @@ export default function Home({ jobsList }) {
    *
    * @param {Object} evt The click event.
    */
-  const handleFilterListDelete = (evt) => {
+  const onFilterListItemClick = (evt) => {
     let label
     if (evt.target.tagName.toLowerCase() === 'span') {
       label = evt.target.parentElement.firstChild.data
@@ -71,21 +107,20 @@ export default function Home({ jobsList }) {
       label = evt.target.firstChild.data
     }
 
-    // Create a new list of filters to display.
-    const newFilter = filters.filter((name) => name !== label)
-    // Update the displayed filters.
-    setFilter(newFilter)
-    // Add the removed entry to the deleted list (for later use).
-    clearFilter(label)
+    dispatch({ type: 'remove_filter_item', label, jobsList })
   }
 
   return (
     <Layout>
       {filters.length > 0 && (
-        <FilterBar handleClear={handleClear}>
-          {filters.map((name) => (
-            <FilterButton handleClick={handleFilterListDelete} key={name}>
-              {name}
+        <FilterBar handleClear={onClear}>
+          {filters.map((item) => (
+            <FilterButton
+              handleClick={onFilterListItemClick}
+              kind={item.kind}
+              key={item.label}
+            >
+              {item.label}
             </FilterButton>
           ))}
         </FilterBar>
@@ -94,7 +129,7 @@ export default function Home({ jobsList }) {
       {jobs.map((job) => (
         <Card
           key={job.id}
-          handleFilterTabletClick={handleFilterTabletClick}
+          handleFilterTabletClick={onFilterTabletClick}
           {...job}
         />
       ))}
