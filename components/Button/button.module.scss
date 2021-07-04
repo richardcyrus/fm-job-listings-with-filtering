@@ -1,17 +1,7 @@
 $color-primary-dark-cyan: #5ca5a5;
 $button-color: rgba(92, 165, 165, 0.1);
 
-button.button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 0;
-
-  @media screen and (-ms-high-contrast: active) {
-    border: 2px solid currentColor;
-  }
-
+.button {
   align-items: center;
   align-self: start;
   background-color: $button-color;

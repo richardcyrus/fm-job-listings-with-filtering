@@ -16,6 +16,18 @@ body {
   }
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentColor;
+  }
+}
+
 /* #region Attribution */
 .attribution {
   font-size: 0.6875rem;
