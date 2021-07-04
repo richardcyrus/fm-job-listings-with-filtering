@@ -1,4 +1,4 @@
-import Button from '../Button'
+import FilterTablet from '../Buttons/FilterTablet'
 
 import styles from './card.module.scss'
 
@@ -25,13 +25,29 @@ export default function Card(props) {
         <p className={styles.location}>{props.location}</p>
       </div>
       <div className={styles.cardBody}>
-        <Button>{props.role}</Button>
-        <Button>{props.level}</Button>
+        <FilterTablet kind="role" handleClick={props.handleFilterTabletClick}>
+          {props.role}
+        </FilterTablet>
+        <FilterTablet kind="level" handleClick={props.handleFilterTabletClick}>
+          {props.level}
+        </FilterTablet>
         {props.languages.map((language) => (
-          <Button key={language}>{language}</Button>
+          <FilterTablet
+            key={language}
+            kind="language"
+            handleClick={props.handleFilterTabletClick}
+          >
+            {language}
+          </FilterTablet>
         ))}
         {props.tools.map((tool) => (
-          <Button key={tool}>{tool}</Button>
+          <FilterTablet
+            key={tool}
+            kind="tool"
+            handleClick={props.handleFilterTabletClick}
+          >
+            {tool}
+          </FilterTablet>
         ))}
       </div>
     </div>
