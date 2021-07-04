@@ -120,3 +120,26 @@ $color-primary-dark-cyan: #5ca5a5;
     padding: 0 0.5rem;
   }
 }
+
+.pillNew,
+.pillFeatured {
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: -0.08px;
+  line-height: 0.875rem;
+  margin-right: 0.5rem;
+  padding: 0.3125rem 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pillNew {
+  background-color: $color-primary-dark-cyan;
+  margin-left: 1.5rem;
+}
+
+.pillFeatured {
+  background-color: $color-neutral-very-dark-cyan;
+}

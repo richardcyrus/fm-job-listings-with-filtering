@@ -10,7 +10,15 @@ export default function Card(props) {
         <img src={props.logo} alt={`${props.company} Logo`} />
       </div>
       <div className={styles.cardHead}>
-        <p className={styles.company}>{props.company}</p>
+        <p className={styles.company}>
+          {props.company}
+          <span className={props.new ? styles.pillNew : undefined}>
+            {props.new && 'New!'}
+          </span>
+          <span className={props.featured ? styles.pillFeatured : undefined}>
+            {props.featured && 'Featured'}
+          </span>
+        </p>
         <p className={styles.position}>{props.position}</p>
         <p className={styles.postedAt}>{props.postedAt}</p>
         <p className={styles.contract}>{props.contract}</p>
