@@ -29,12 +29,17 @@ Users should be able to:
 
 ![Reference preview](./design/reference/desktop-preview.jpg)
 
+#### Project Screenshots
+
+- [Desktop](./design/screenshots/desktop-screenshot.png)
+- [Mobile](./design/screenshots/mobile-screenshot.png)
+
 #### Reference images
 
-[Desktop design](./design/reference/desktop-design.jpg)
-[Desktop active states](./design/reference/active-states.jpg)
-[Mobile design](./design/reference/mobile-design.jpg)
-[Mobile with filters](./design/reference/mobile-with-filters.jpg)
+- [Desktop design](./design/reference/desktop-design.jpg)
+- [Desktop active states](./design/reference/active-states.jpg)
+- [Mobile design](./design/reference/mobile-design.jpg)
+- [Mobile with filters](./design/reference/mobile-with-filters.jpg)
 
 ### Links
 
