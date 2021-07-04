@@ -1,0 +1,24 @@
+.filterBar {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -5px rgba(13, 113, 130, 0.15);
+  display: flex;
+  gap: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: -32px;
+  padding-right: 1.5rem;
+
+  @media screen and (min-width: 75em) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1110px;
+  }
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 0 1.25rem 1.25rem;
+}
