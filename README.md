@@ -43,6 +43,7 @@ Users should be able to:
 
 ### Links
 
+- [Solution](https://www.frontendmentor.io/solutions/job-listing-with-filtering-nextjs-reactjs-scss-modules-W-WJWRyF2)
 - [Repository](https://github.com/richardcyrus/fm-job-listings-with-filtering)
 - [Live Site](https://fm-job-listings-with-filtering.vercel.app/)
 
